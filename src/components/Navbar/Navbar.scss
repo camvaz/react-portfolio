@@ -49,6 +49,14 @@
     &:hover:after {
       transform: scaleX(1);
     }
+    &.active:after {
+      display: block;
+      content: "";
+      transform: scaleX(1);
+      transition: transform 0.3s ease-in-out;
+      padding-bottom: 5px;
+      border-bottom: solid $negro 3px;
+    }
   }
 }
 
