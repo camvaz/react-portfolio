@@ -15,7 +15,7 @@ export const Home: () => JSX.Element = () => {
       <section id="intro">
         <div className="intro-text animated fadeIn">
           <h1>
-            Delivering clean and modern digital experiences through the web.
+            Delivering clean and modern<br/>digital experiences through<br/>web technologies.
           </h1>
           <div className="btn-container">
             <button className="naranja">See portfolio</button>
