@@ -1,0 +1,77 @@
+@import "../../index.scss";
+
+#navbar {
+  padding: 40px 15px;
+  display: flex;
+  background-color: $crema;
+  position:fixed;
+  width:100%;
+  z-index:100;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  img {
+    padding-left: 35px;
+    width: 80px;
+  }
+  h2 {
+    margin: 0;
+    padding-left: 45px;
+    font-size: 25px;
+  }
+}
+
+#links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  p {
+    margin: 25px;
+    border-bottom: none;
+    font-size: 22px;
+    cursor: pointer;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+    &:after {
+      display: block;
+      content: "";
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+      padding-bottom: 5px;
+      border-bottom: solid $negro 3px;
+    }
+    &:hover:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+#socials {
+  margin-left: 200px;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    margin: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  img {
+    width: 30px;
+    cursor: pointer;
+  }
+}

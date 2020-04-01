@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: Muli, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+$crema: #f2f2f2;
+$naranja: #f96d00;
+$gris: #393e46;
+$negro: #222831;
+h2,
+p {
+  color: $negro;
+}
