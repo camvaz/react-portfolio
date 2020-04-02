@@ -15,11 +15,18 @@
   img {
     padding-left: 35px;
     width: 80px;
+    @media #{$desktopsmall}{
+      width:40px;
+    }
   }
   h2 {
     margin: 0;
     padding-left: 45px;
     font-size: 25px;
+    @media #{$desktopsmall}{
+      padding-left: 22px;
+      font-size: 17px;
+    }
   }
 }
 
@@ -32,6 +39,10 @@
     border-bottom: none;
     font-size: 15px;
     cursor: pointer;
+    @media #{$desktopsmall}{
+      font-size: 12px;
+      margin: 0 18px;
+    }
     &:first-child {
       margin-left: 0;
     }
@@ -66,7 +77,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media #{$desktopsmall}{
+    margin:auto 100px auto 80px;
+  }
   a {
+    outline: none;
     margin: 10px;
     &:first-child {
       margin-left: 0;
@@ -81,5 +96,8 @@
   img {
     width: 30px;
     cursor: pointer;
+    @media #{$desktopsmall}{
+      width:18px;
+    }
   }
 }

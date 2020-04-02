@@ -16,7 +16,13 @@ $crema: #f2f2f2;
 $naranja: #f96d00;
 $gris: #393e46;
 $negro: #222831;
+
 h2,
 p {
   color: $negro;
 }
+
+$tablet: "only screen and (max-width : 991px)";
+$mobile: "only screen and (max-width : 767px)";
+$desktop: "only screen and (min-width : 992px)";
+$desktopsmall: "only screen and (min-width : 992px) and (max-width : 1365px)";
