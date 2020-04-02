@@ -11,6 +11,11 @@
     width: 2000px;
     margin: auto;
   }
+  @media #{$mobile}{
+    padding: 30px auto; 
+    position: initial;
+    display:flex;
+  }
 }
 
 #logo {
@@ -23,19 +28,27 @@
       width: 80px;
     }
     @media #{$desktopsmall} {
-      width: 40px;
+      width: 50px;
+    }
+    @media #{$mobile} {
+      width: 50px;
+      padding-left: 0;
     }
   }
   h2 {
     margin: 0;
     padding-left: 45px;
     font-size: 25px;
-    @media #{$desktop4k}{
+    @media #{$desktop4k} {
       font-size: 30px;
     }
     @media #{$desktopsmall} {
       padding-left: 22px;
       font-size: 17px;
+    }
+    @media #{$mobile} {
+      padding-left: 25px;
+      font-size:22px;
     }
   }
 }
@@ -44,12 +57,15 @@
   display: flex;
   align-items: center;
   margin-left: auto;
+  @media #{$mobile} {
+    display: none;
+  }
   p {
     margin: 0 35px;
     border-bottom: none;
     font-size: 15px;
     cursor: pointer;
-    @media #{$desktop4k}{
+    @media #{$desktop4k} {
       font-size: 25px;
     }
     @media #{$desktopsmall} {
@@ -93,9 +109,12 @@
   @media #{$desktopsmall} {
     margin: auto 100px auto 80px;
   }
+  @media #{$mobile} {
+    display:none;
+  }
   a {
     outline: none;
-    margin: 10px;
+    margin: 0 10px;
     &:first-child {
       margin-left: 0;
     }
@@ -105,14 +124,20 @@
     &:hover {
       opacity: 0.8;
     }
+    @media #{$mobile} {
+      margin:0 5px; 
+    }
   }
   img {
     width: 30px;
     cursor: pointer;
-    @media #{$desktop4k}{
+    @media #{$desktop4k} {
       width: 35px;
     }
     @media #{$desktopsmall} {
+      width: 18px;
+    }
+    @media #{$mobile} {
       width: 18px;
     }
   }

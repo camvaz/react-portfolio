@@ -2,9 +2,9 @@
 
 #home {
   position: relative;
-  @media only screen and (min-width: 2000px){
-    width:2000px;
-    margin:auto;
+  @media only screen and (min-width: 2000px) {
+    width: 2000px;
+    margin: auto;
   }
 }
 
@@ -22,31 +22,42 @@
   display: flex;
   padding: 0px 100px;
   height: 100vh;
-  @media #{$desktopsmall}{
+  @media #{$mobile} {
+    flex-direction: column;
+    padding: 20px;
+  }
+  @media #{$desktopsmall} {
     padding: 0 50px;
   }
   .intro-text {
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:160px 0 0;
-    @media #{$desktop4k}{
-      padding:180px 0 0;
+    padding: 160px 0 0;
+    @media #{$desktop4k} {
+      padding: 180px 0 0;
       width: 50%;
     }
-    @media #{$desktopsmall}{
+    @media #{$desktopsmall} {
       width: 100%;
-      padding:120px 0 0 ;
+      padding: 120px 0 0;
+    }
+    @media #{$mobile} {
+      width: 100%;
+      padding: 0;
     }
     h1 {
       margin: 0;
       font-size: 45px;
       margin-bottom: 35px;
-      @media #{$desktop4k}{
+      @media #{$desktop4k} {
         font-size: 60px;
       }
-      @media #{$desktopsmall}{
+      @media #{$desktopsmall} {
         font-size: 30px;
+      }
+      @media #{$mobile} {
+        font-size: 35px;
       }
     }
     .btn-container {
@@ -59,8 +70,11 @@
         color: $crema;
         font-size: 15px;
         padding: 10px 20px;
-        @media #{$desktopsmall}{
+        @media #{$desktopsmall} {
           font-size: 13px;
+        }
+        @media #{$mobile}{
+          font-size: 20px;
         }
         &:first-child {
           margin-right: 15px;
@@ -70,6 +84,7 @@
         }
         &.gris {
           background-color: $gris;
+          display: none;
         }
         &:hover {
           opacity: 0.9;
@@ -84,11 +99,13 @@
     width: auto;
     img {
       width: 90%;
-      padding-top:150px;
-      @media #{$desktop4k}{
+      padding-top: 150px;
+      @media #{$desktop4k} {
         width: 80%;
       }
-      @media #{$desktopsmall}{
+      @media #{$mobile} {
+        padding-top: 70px;
+        width:80%
       }
       &.animate {
         animation: illustration 2s ease-in-out;

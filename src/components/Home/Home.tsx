@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navbar } from "../Navbar/Navbar";
 import { Mobile, Desktop } from "../Responsive/Responsive";
 import WebDev from "../../assets/undraw-webdev.png";
+import WebDevMobile from "../../assets/undraw-webdev-mobile.png";
 import "./Home.scss";
 import "animate.css";
 
@@ -32,6 +33,9 @@ export const Home: () => JSX.Element = () => {
           <Desktop>
             <img src={WebDev} alt="Web developer" className={"animate"} />
           </Desktop>
+          <Mobile>
+            <img src={WebDevMobile} alt="Web developer" className={"animate"} />
+          </Mobile>
         </div>
       </section>
     </main>
