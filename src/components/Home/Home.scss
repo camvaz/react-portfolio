@@ -27,6 +27,9 @@
     display: flex;
     flex-direction: column;
     padding:160px 0 0;
+    @media #{$desktop4k}{
+      width: 50%;
+    }
     @media #{$desktopsmall}{
       padding:120px 0 0 ;
     }
@@ -34,6 +37,9 @@
       margin: 0;
       font-size: 45px;
       margin-bottom: 35px;
+      @media #{$desktop4k}{
+        font-size: 60px;
+      }
       @media #{$desktopsmall}{
         font-size: 25px;
       }
@@ -74,8 +80,11 @@
     img {
       width: 80%;
       padding-top:150px;
-      @media #{$desktopsmall}{
+      @media #{$desktop4k}{
+        // padding-right: 150px;
         width: 80%;
+      }
+      @media #{$desktopsmall}{
         padding-left:20px;
       }
       &.animate {
