@@ -2,6 +2,10 @@
 
 #home {
   position: relative;
+  @media only screen and (min-width: 2000px){
+    width:2000px;
+    margin:auto;
+  }
 }
 
 @keyframes illustration {
@@ -22,7 +26,10 @@
     width: 70%;
     display: flex;
     flex-direction: column;
-    padding:180px 0 0;
+    padding:160px 0 0;
+    @media #{$desktopsmall}{
+      padding:120px 0 0 ;
+    }
     h1 {
       margin: 0;
       font-size: 45px;
@@ -65,7 +72,7 @@
     align-items: center;
     width: auto;
     img {
-      width: 90%;
+      width: 80%;
       padding-top:150px;
       @media #{$desktopsmall}{
         width: 80%;
