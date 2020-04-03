@@ -3,6 +3,7 @@ import "./Navbar.scss";
 import Logo from "../../assets/deployment.svg";
 import Github from "../../assets/github.svg";
 import Twitter from "../../assets/twitter.svg";
+import "animate.css";
 export const Navbar: () => JSX.Element = () => {
   const [pathname, setPathname] = useState(window.location.pathname);
 
@@ -12,7 +13,7 @@ export const Navbar: () => JSX.Element = () => {
   }, [window.location.pathname]);
   
   return (
-    <main id="navbar">
+    <main id="navbar" className="animated fadeIn">
       <section id="logo">
         <img src={Logo} alt="logo" />
         <h2>Victor Campos Portfolio</h2>
@@ -21,7 +22,8 @@ export const Navbar: () => JSX.Element = () => {
         <p className={`${pathname === "/" ? "active" : ""}`}>Home</p>
         <p>About</p>
         <p>Portfolio</p>
-        <p>CV</p>
+        <p>Contact</p>
+        <p>Blog</p>
       </section>
       <section id="socials">
         <a href="https://github.com/camvaz">
