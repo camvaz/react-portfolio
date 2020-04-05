@@ -20,7 +20,7 @@
 #intro {
   background-color: #f2f2f2;
   display: flex;
-  padding: 160px 120px 0;
+  padding: 140px 120px 0;
   min-height: 82.5vh;
   @media #{$mobile} {
     flex-direction: column;
@@ -43,44 +43,58 @@
       // padding: 120px 0 0;
     }
     @media #{$mobile} {
-      width: 100%;
+      width: 90%;
       padding: 0;
+      padding-left:10%;
     }
     h1 {
+      // background-image: url("../../assets/mancha.png");
+      // background-size: 100% 40%;
+      // background-position: 50% -5%;
+      // background-repeat: no-repeat;
       margin: 0 0 24px;
       font-size: 44px;
-      // margin-bottom: 35px;
       @media #{$desktop4k} {
         font-size: 60px;
       }
       @media #{$desktopsmall} {
-        font-size: 26px;
+        font-size: 40px;
       }
       @media #{$mobile} {
         font-size: 35px;
+        // text-align:center;
       }
     }
-    p{
-      width:90%;
-      margin-top:0;
-      margin-bottom:11px;
+    p {
+      width: 90%;
+      margin-top: 0;
+      margin-bottom: 11px;
       font-size: 19px;
-      &.last{
-       margin-bottom: 32px; 
+      &.last {
+        margin-bottom: 32px;
       }
     }
-    ul{
-      margin:0 0 11px;
-      list-style-image: url('../../assets/check-in.png');
+    ul {
+      margin: 0 0 11px;
+      list-style-image: url("../../assets/check-in.png");
+      @media #{$mobile}{
+        width:300px;
+      }
     }
-    ul > li{
+    ul > li {
       font-size: 19px;
       margin: 16px 0;
-      padding-left: 20px;
+      padding-left: 10px;
+      @media #{$mobile}{
+        width:auto;
+      }
     }
 
     .btn-container {
       display: flex;
+      @media #{$mobile} {
+        width:300px;
+      }
       button {
         cursor: pointer;
         border: none;
@@ -89,20 +103,26 @@
         color: $crema;
         font-size: 17px;
         padding: 10px 20px;
-        @media #{$desktopsmall} {
-          font-size: 13px;
+        transition: box-shadow 0.2s ease-in-out;
+        &:hover{
+          box-shadow: 5px 5px 18px #888888;
         }
-        @media #{$mobile}{
-          font-size: 20px;
+
+        @media #{$desktopsmall} {
+          // font-size: 13px;
+        }
+        @media #{$mobile} {
+          font-size: 15px;
         }
         &:first-child {
           margin-right: 15px;
         }
         &.naranja {
-          background-color: $naranja;
+          background: $naranja;
+          background: #f96d00;
         }
         &.gris {
-          background-color: $gris;
+          background: $gris;
           // display: none;
         }
         &:hover {
@@ -116,15 +136,18 @@
     justify-content: center;
     align-items: center;
     width: auto;
+    @media #{$desktopsmall} {
+      width: 90%;
+    }
     img {
       width: 100%;
-      margin-bottom:100px;
+      margin-bottom: 80px;
       @media #{$desktop4k} {
         width: 80%;
       }
       @media #{$mobile} {
         padding-top: 70px;
-        width:80%
+        width: 80%;
       }
       &.animate {
         animation: illustration 2s ease-in-out;

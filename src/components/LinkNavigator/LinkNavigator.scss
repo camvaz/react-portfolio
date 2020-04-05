@@ -1,13 +1,17 @@
 @import "../../index.scss";
 
 #link-navigator {
-  width: 60px;
-  height: 900px;
+  width: 100px;
+  margin-left: 20px;
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: fixed;
   z-index: 2000;
+  @media #{$mobile}{
+    display: none;
+  }
 }
 
 #nav-links {
@@ -18,15 +22,52 @@
 }
 
 .nav-link {
-  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin: 20px 0;
-  width: 15px;
-  height: 4px;
-  &:first-child{
-    margin-top:0;
+  width: 100%;
+
+  cursor: pointer;
+  p {
+    font-size: 12px;
+    margin: 0 0 0 5px;
+    opacity: 1;
+    visibility: visible;
+    transition: color 0.3s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    &.dark{
+      color:$crema;
+    }
+    &.inactive {
+      visibility: hidden;
+      opacity: 0;
+    }
   }
-  &:last-child{
-    margin-bottom:0;
+}
+
+.link-bar {
+  width: 12px;
+  height: 2px;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  &.active {
+    width: 15px;
+    background: #f96d00 !important;
+    border: solid $naranja 1px;
+  }
+
+  &.light {
+    background: $gris;
+  }
+
+  &.dark {
+    background-color: $crema;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
   }
   @media #{$desktopsmall} {
     margin: 15px 0;
