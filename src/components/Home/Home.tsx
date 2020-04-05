@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Helmet from "react-helmet";
 import WebDev from "../../assets/undraw-webdev.png";
 import WebDevMobile from "../../assets/undraw-webdev-mobile.png";
 
@@ -22,10 +23,12 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       handleScroll("about");
+      handleScroll("intro");
     });
     return () => {
       window.removeEventListener("scroll", () => {
         handleScroll("about");
+        handleScroll("intro");
       });
     };
   }, []);
@@ -34,21 +37,30 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
     const ref = document.getElementById(element)?.getBoundingClientRect();
     if (ref) {
       switch (element) {
+        case "intro":
+          console.log(ref.top + " " + ref.bottom);
+          if (ref.top <= -1 && ref.bottom >= -1) {
+            props.setNavbar({ isDark: false, isSmall: true, active: "home" });
+          }
+          if (ref.top === 0)
+            props.setNavbar({ isDark: false, isSmall: false, active: "home" });
+          break;
         case "about":
           const insideAboutSmall = ref.top <= ref.height / 4 && ref.bottom >= 0;
-          const insideAboutFull =  ref.top <= 0 && ref.bottom >= 0;
-          const insideHalf = ref.top <= ref.height / 2 && ref.bottom >= ref.height / 2;
-          
+          const insideAboutFull = ref.top <= 0 && ref.bottom >= 0;
+          const insideHalf =
+            ref.top <= ref.height / 2 && ref.bottom >= ref.height / 2;
+
           setLinkNav({
             isDark: insideHalf,
             active: insideHalf ? "about" : "home",
           });
           props.setNavbar({
             isDark: insideAboutFull,
-            isSmall: insideAboutSmall,
-            active: insideAboutFull ? 'about' : 'home'
+            isSmall: true,
+            active: insideAboutFull ? "about" : "home",
           });
-          
+
           break;
       }
     }
@@ -56,10 +68,28 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
 
   return (
     <main id="home">
+      <Helmet>
+        <link rel="canonical" href="https://vics.ml" />
+        <meta
+          name="description"
+          content="Aesthetic and powerful digital solutions by Victor Campos."
+        />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="General" />
+        <meta name="location" content="México" />
+        <meta
+          name="classification"
+          content="Web development | Digital design | Mobile Apps"
+        />
+      </Helmet>
       <LinkNavigator isDark={linkNav.isDark} active={linkNav.active} />
       <section id="intro">
         <div className="intro-text">
-          <h1 className="title animated fadeInUp">Aesthetic and powerful digital solutions.</h1>
+          <h1 className="title animated fadeInUp">
+            Aesthetic and powerful digital solutions.
+          </h1>
           <p className="animated fadeInUp">
             Hello there! I'm a programming enthusiast that enjoys creating
             beautiful web applications. Some of the work I've done includes:
@@ -80,7 +110,7 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
               See portfolio
             </button>
             <button className="gris animated fadeIn delay-2s">
-              Contact me 👋`
+              Contact me 👋
             </button>
           </div>
         </div>
@@ -94,6 +124,9 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
         </div>
       </section>
       <About />
+      <section>
+        <h1>aef</h1>
+      </section>
     </main>
   );
 };

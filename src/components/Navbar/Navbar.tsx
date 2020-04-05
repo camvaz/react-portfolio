@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import Logo from "../../assets/deployment.svg";
-import Github from "../../assets/github.svg";
-import Twitter from "../../assets/twitter.svg";
 import "animate.css";
 import GithubLogo from "./assets/GithubLogo";
 import TwitterLogo from "./assets/TwitterLogo";
@@ -18,14 +16,19 @@ const Navbar: (props: INavP) => JSX.Element = (props: INavP) => {
 
   useEffect(() => {
     setPathname(window.location.pathname);
+    document.getElementById("navbar")?.classList.add("animated");
+    document.getElementById("navbar")?.classList.add("fadeInDown");
+    document.getElementById("navbar")?.classList.add("slow");
+    setTimeout(() => {
+      document.getElementById("navbar")?.classList.remove("animated");
+      document.getElementById("navbar")?.classList.remove("fadeInDown");
+      document.getElementById("navbar")?.classList.remove("slow");
+    }, 1500);
     return () => {};
   }, [window.location.pathname]);
 
   return (
-    <main
-      id="navbar"
-      className={`animated fadeInDown`}
-    >
+    <main id="navbar" className={`${props.isSmall ? "small" : ""} ${props.isDark ? 'dark': ''}`}>
       <section id="logo">
         <img src={Logo} alt="logo" />
         <h2>Victor Campos Portfolio</h2>
@@ -33,36 +36,40 @@ const Navbar: (props: INavP) => JSX.Element = (props: INavP) => {
       <section id="links">
         <p
           className={`${
-           pathname === "/#home" || props.active === 'home' ? "active" : ""
+            pathname === "/#home" || props.active === "home" ? "active" : ""
           } ${props.isDark ? "dark" : ""}`}
         >
           Home
         </p>
         <p
-          className={`${pathname === "/#about" || props.active === 'about' ? "active" : ""} ${
-            props.isDark ? "dark" : ""
-          }`}
+          className={`${
+            pathname === "/#about" || props.active === "about" ? "active" : ""
+          } ${props.isDark ? "dark" : ""}`}
         >
           About
         </p>
         <p
-          className={`${pathname === "/portfolio" || props.active === 'portfolio' ? "active" : ""} ${
-            props.isDark ? "dark" : ""
-          }`}
+          className={`${
+            pathname === "/portfolio" || props.active === "portfolio"
+              ? "active"
+              : ""
+          } ${props.isDark ? "dark" : ""}`}
         >
           Portfolio
         </p>
         <p
-          className={`${pathname === "/contact" || props.active === 'contact' ? "active" : ""} ${
-            props.isDark ? "dark" : ""
-          }`}
+          className={`${
+            pathname === "/contact" || props.active === "contact"
+              ? "active"
+              : ""
+          } ${props.isDark ? "dark" : ""}`}
         >
           Contact
         </p>
         <p
-          className={`${pathname === "/blog" || props.active === 'blog' ? "active" : ""} ${
-            props.isDark ? "dark" : ""
-          }`}
+          className={`${
+            pathname === "/blog" || props.active === "blog" ? "active" : ""
+          } ${props.isDark ? "dark" : ""}`}
         >
           Blog
         </p>

@@ -4,12 +4,12 @@
   padding: 30px 0px;
   display: flex;
   background-color: $crema;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 100;
   color: $negro;
-  opacity: 0;
-  visibility: visible;
+  // opacity: 0;
+  // visibility: visible;
   transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 1s, visibility 0.3s ease-in-out;
   @media #{$desktop4k} {
     width: 2000px;
@@ -23,8 +23,8 @@
   }
   &.small {
     padding: 10px 0px;
-    opacity: 1;
-    visibility: hidden;
+    // opacity: 1;
+    // visibility: hidden;
   }
   &.dark {
     background-color: $gris;
