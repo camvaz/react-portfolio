@@ -30,6 +30,7 @@
     background-repeat: no-repeat;
     @media #{$desktopsmall} {
       margin-top: 120px;
+    background-size: 55% 80%;
     }
   }
 }
@@ -76,6 +77,9 @@
     height: 80vh;
     width: 85%;
     margin: auto;
+  @media #{$desktopsmall}{
+      width:85%;
+  }
     h2 {
       color: $crema;
       text-align: center;
@@ -85,6 +89,9 @@
       margin-top: 50px;
       //   margin-left: 8%;
       width: 50%;
+      @media #{$desktopsmall}{
+          margin-top:10px;
+      }
       ul {
         padding-left: 10px;
       }
@@ -92,6 +99,9 @@
         font-size: 23px;
         color: $crema;
         margin: 50px 0;
+        @media #{$desktopsmall}{
+            font-size: 22px;
+        }
         &:first-child {
           width: 80%;
           margin-top: 0px;
