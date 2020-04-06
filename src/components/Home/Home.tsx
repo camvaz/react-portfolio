@@ -39,7 +39,7 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
       switch (element) {
         case "intro":
           console.log(ref.top + " " + ref.bottom);
-          if (ref.top <= -1 && ref.bottom >= -1) {
+          if (ref.top <= 90 && ref.bottom >= 70) {
             props.setNavbar({ isDark: false, isSmall: true, active: "home" });
           }
           if (ref.top === 0)
@@ -47,7 +47,7 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
           break;
         case "about":
           const insideAboutSmall = ref.top <= ref.height / 4 && ref.bottom >= 0;
-          const insideAboutFull = ref.top <= 0 && ref.bottom >= 0;
+          const insideAboutFull = ref.top <= 280  ;
           const insideHalf =
             ref.top <= ref.height / 2 && ref.bottom >= ref.height / 2;
 
@@ -124,9 +124,6 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
         </div>
       </section>
       <About />
-      <section>
-        <h1>aef</h1>
-      </section>
     </main>
   );
 };

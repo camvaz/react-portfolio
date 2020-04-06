@@ -21,23 +21,23 @@ const About: () => JSX.Element = () => {
   }, []);
 
   const genTitle: () => void = () => {
-      if(flag){
-          let tit = "";
-          const numwords = 50;
-          word.split("").map((data, index) => {
-            for (let i = 0; i <= numwords;  i++) {
-              setTimeout(() => {
-                if(i !== numwords){
-                    setTemp(String.fromCharCode(Math.round(Math.random() * 100)));
-                } else {
-                    tit+=data;
-                    setTitle(tit+data);
-                    setTemp("");
-                }
-            }, 500);
+    if (flag) {
+      let tit = "";
+      const numwords = 50;
+      word.split("").map((data, index) => {
+        for (let i = 0; i <= numwords; i++) {
+          setTimeout(() => {
+            if (i !== numwords) {
+              setTemp(String.fromCharCode(Math.round(Math.random() * 100)));
+            } else {
+              tit += data;
+              setTitle(tit + data);
+              setTemp("");
+            }
+          }, 500);
         }
-    });
-      }
+      });
+    }
   };
 
   const handleScroll: (element: string) => void = (element: string) => {
@@ -50,8 +50,7 @@ const About: () => JSX.Element = () => {
           if (refHalf) {
             // flag=true;
             genTitle();
-            flag=false;
-            
+            flag = false;
           }
           if (refAbout) setAboutX(0);
           // else if(ref.bottom <= 0){
@@ -66,11 +65,47 @@ const About: () => JSX.Element = () => {
     <main id="about" style={{ transform: `translateY(${aboutX}px)` }}>
       <div className="title" id="about-title">
         <h1>
-          {title.slice(0,-1)}
+          {title.slice(0, -1)}
           {tempWord}
         </h1>
       </div>
-      <div className="content"></div>
+      <div className="content">
+        <div className="img"></div>
+        <div className="content-text">
+          <div className="left">
+            <ul>
+              <li>
+              My name is Víctor Manuel Campos Vázquez, I'm from Veracruz, Mexico
+              and I'm 22 years old.
+              </li>
+              <li>
+                I started my career in tech in 2019 when I joined Headtag Mx as a
+                Jr. Developer.
+              </li>
+              <li>
+                My main interest are Web and Mobile Development, UI / UX and Dev Ops.
+              </li>
+              <li>
+                My favorite programming languages are Python, TypeScript and Scala.
+              </li>
+            </ul>
+          </div>
+          <div className="right">
+            <h2>Technologies I'm experienced with:</h2>
+            <ul>
+              <li>Node Js/Express</li>
+              <li>Laravel</li>
+              <li>Flask</li>
+              <li>Play</li>
+              <li>GraphQL</li>
+              <li>MongoDB</li>
+              <li>MySQL</li>
+              <li>React Js / Native</li>
+              <li>Angular</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
   );
 };

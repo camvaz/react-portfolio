@@ -1,25 +1,152 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
-#about{
-    position: relative; 
-    background-color: $gris;
-    height:100vh;
-    transition: transform 0.6s ease-in-out;
+#about {
+  position: relative;
+  background-color: $gris;
+  //   height: 100vh;
+  transition: transform 0.6s ease-in-out;
 }
 
-.title{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width:80%;
-    h1{
-        color:$crema;
-        font-size: 80px;
-        // text-align: center;
-        margin:0;
-        margin-top:50px;
-        margin-left:10%;
-        // border-right: solid $crema 10px;
-        width:100%;
+.title {
+  //   background-color: $gris;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 20vh;
+  h1 {
+    color: $crema;
+    font-size: 70px;
+    // text-align: center;
+    margin: 0;
+    margin-top: 150px;
+    margin-left: 7.5%;
+    // border-right: solid $crema 10px;
+    width: 100%;
+    padding-left: 2%;
+    background-image: url("../../assets/mancha.png");
+    background-size: 40% 80%;
+    background-position: -2% 60%;
+    background-repeat: no-repeat;
+    @media #{$desktopsmall} {
+      margin-top: 120px;
     }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.content {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  //   position: absolute;
+  width: 100%;
+  //   background-color: $gris;
+
+  .img {
+    background-image: url("../../assets/workspace.png");
+    background-size: cover;
+    width: 450px;
+    height: 450px;
+    animation: float 6s ease-in-out infinite;
+    overflow: hidden;
+    transform: translatey(0px);
+    @media #{$desktopsmall} {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  .content-text {
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    height: 80vh;
+    width: 85%;
+    margin: auto;
+    h2 {
+      color: $crema;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .left {
+      margin-top: 50px;
+      //   margin-left: 8%;
+      width: 50%;
+      ul {
+        padding-left: 10px;
+      }
+      ul > li {
+        font-size: 23px;
+        color: $crema;
+        margin: 50px 0;
+        &:first-child {
+          width: 80%;
+          margin-top: 0px;
+        }
+        &:nth-child(2) {
+          width: 60%;
+        }
+        &:nth-child(3) {
+          width: 60%;
+        }
+        &:nth-child(4) {
+          width: 70%;
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      ul {
+        margin-left: 35%;
+      }
+      ul > li {
+        font-size: 26px;
+        color: $crema;
+        margin: 20px 0;
+        margin-left: 30px;
+        &:first-child {
+          width: 85%;
+          margin-left: 0;
+          margin-top: 30px;
+        }
+        &:nth-child(2) {
+          margin-left: 15px;
+        }
+        &:nth-child(8) {
+          margin-left: 15px;
+        }
+        &:nth-child(4) {
+          margin-left: 45px;
+        }
+        &:nth-child(5) {
+          margin-left: 50px;
+        }
+        &:nth-child(6) {
+          margin-left: 45px;
+        }
+        // &:nth-child(3){
+        //     margin-left: 120px;
+        // }
+        // &:nth-child(4) {
+        //     margin-left: 120px;
+        // }
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }

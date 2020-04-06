@@ -20,8 +20,8 @@
 #intro {
   background-color: #f2f2f2;
   display: flex;
-  padding: 140px 120px 0;
-  min-height: 82.5vh;
+  padding: 110px 120px 0;
+  min-height: 85.5vh;
   @media #{$mobile} {
     flex-direction: column;
     padding: 20px 0;
@@ -30,7 +30,7 @@
     padding: 140px 100px;
   }
   .intro-text {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px 0 0;
@@ -140,7 +140,6 @@
     }
     img {
       width: 100%;
-      margin-bottom: 80px;
       @media #{$desktop4k} {
         width: 80%;
       }

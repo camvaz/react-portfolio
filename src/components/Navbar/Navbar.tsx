@@ -23,7 +23,7 @@ const Navbar: (props: INavP) => JSX.Element = (props: INavP) => {
       document.getElementById("navbar")?.classList.remove("animated");
       document.getElementById("navbar")?.classList.remove("fadeInDown");
       document.getElementById("navbar")?.classList.remove("slow");
-    }, 1500);
+    }, 1750);
     return () => {};
   }, [window.location.pathname]);
 
