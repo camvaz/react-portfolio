@@ -2,7 +2,7 @@ import React from "react";
 import "./LinkNavigator.scss";
 
 export interface ILNP {
-  isDark: boolean;
+  color: string;
   active: string;
 }
 
@@ -12,12 +12,12 @@ const LinkNavigator: (props: ILNP) => JSX.Element = (props: ILNP) => {
       <section id="nav-links">
         <div className="nav-link">
           <div
-            className={`link-bar ${props.isDark ? "dark" : "light"} ${
+            className={`link-bar ${props.color} ${
               props.active === "home" ? "active" : ""
             }`}
           ></div>
           <p
-            className={`${props.isDark ? "dark" : ""} ${
+            className={`${props.color} ${
               props.active === "home" ? "" : "inactive"
             }`}
           >
@@ -26,26 +26,26 @@ const LinkNavigator: (props: ILNP) => JSX.Element = (props: ILNP) => {
         </div>
         <div className="nav-link">
           <div
-            className={`link-bar ${props.isDark ? "dark" : "light"} ${
+            className={`link-bar ${props.color} ${
               props.active === "about" ? "active" : ""
             }`}
           ></div>
           <p
-            className={`${props.isDark ? "dark" : ""} ${
+            className={`${props.color} ${
               props.active === "about" ? "" : "inactive"
             }`}
           >
-            About
+            Services
           </p>
         </div>
         <div className="nav-link">
           <div
-            className={`link-bar ${props.isDark ? "dark" : "light"} ${
+            className={`link-bar ${props.color} ${
               props.active === "portfolio" ? "active" : ""
             }`}
           ></div>
           <p
-            className={`${props.isDark ? "dark" : ""} ${
+            className={`${props.color} ${
               props.active === "portfolio" ? "" : "inactive"
             }`}
           >
@@ -54,12 +54,12 @@ const LinkNavigator: (props: ILNP) => JSX.Element = (props: ILNP) => {
         </div>
         <div className="nav-link">
           <div
-            className={`link-bar ${props.isDark ? "dark" : "light"} ${
+            className={`link-bar ${props.color} ${
               props.active === "contact" ? "active" : ""
             }`}
           ></div>
           <p
-            className={`${props.isDark ? "dark" : ""} ${
+            className={`${props.color} ${
               props.active === "contact" ? "" : "inactive"
             }`}
           >

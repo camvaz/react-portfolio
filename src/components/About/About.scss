@@ -1,36 +1,106 @@
 @import "../../index.scss";
 
 #about {
-  position: relative;
-  background-color: $gris;
-  //   height: 100vh;
+  background-color: $naranja;
+  height: 100vh;
   transition: transform 0.6s ease-in-out;
 }
 
 .title {
   //   background-color: $gris;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 60%;
   height: 20vh;
+  margin: auto;
+  @media #{$desktopsmall} {
+    width: 70%;
+  }
   h1 {
     color: $crema;
     font-size: 70px;
-    // text-align: center;
-    margin: 0;
-    margin-top: 150px;
-    margin-left: 7.5%;
-    // border-right: solid $crema 10px;
+    margin: 250px 0 0;
     width: 100%;
-    padding-left: 2%;
-    background-image: url("../../assets/mancha.png");
-    background-size: 40% 80%;
-    background-position: -2% 60%;
-    background-repeat: no-repeat;
     @media #{$desktopsmall} {
-      margin-top: 120px;
-    background-size: 55% 80%;
+      background-size: 55% 80%;
+    }
+  }
+  h2 {
+    color: $crema;
+    width: 100%;
+  }
+}
+.service-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  visibility: hidden;
+  opacity: 0;
+  $speedtransition: 0.5s;
+  transition: visibility $speedtransition ease-in-out, opacity $speedtransition ease-in-out,
+    margin $speedtransition ease-in-out;
+  margin: 250px auto 0;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    margin: 180px auto 0;
+  }
+  @media #{$desktopsmall} {
+    width: 70%;
+  }
+  .service {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    &:first-child {
+      img {
+        animation: float 4s ease-in-out infinite;
+        overflow: hidden;
+        transform: translatey(0px);
+      }
+    }
+    &:nth-child(2) {
+      img {
+        animation: floatAlt 4s ease-in-out infinite;
+        overflow: hidden;
+        transform: translatey(0px);
+      }
+    }
+    &:nth-child(3) {
+      img {
+        animation: float 4s ease-in-out infinite;
+        overflow: hidden;
+        transform: translatey(0px);
+      }
+    }
+    &:last-child {
+      img {
+        animation: floatAlt 4s ease-in-out infinite;
+        overflow: hidden;
+        transform: translatey(0px);
+      }
+    }
+    h3,
+    p {
+      color: $crema;
+    }
+    h3 {
+      margin: 30px 0 20px;
+      font-weight: 700;
+      font-size: 20px;
+      // color: $gris;
+    }
+    p {
+      margin: 10px 0;
+      // color: $gris;
+      &:nth-child(1) {
+        margin-top: 0;
+      }
     }
   }
 }
@@ -40,7 +110,29 @@
     transform: translatey(0px);
   }
   50% {
-    transform: translatey(-20px);
+    transform: translatey(-6px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-6px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@keyframes floatAlt {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(6px);
   }
   100% {
     transform: translatey(0px);
@@ -77,9 +169,9 @@
     height: 80vh;
     width: 85%;
     margin: auto;
-  @media #{$desktopsmall}{
-      width:85%;
-  }
+    @media #{$desktopsmall} {
+      width: 85%;
+    }
     h2 {
       color: $crema;
       text-align: center;
@@ -89,8 +181,8 @@
       margin-top: 50px;
       //   margin-left: 8%;
       width: 50%;
-      @media #{$desktopsmall}{
-          margin-top:10px;
+      @media #{$desktopsmall} {
+        margin-top: 10px;
       }
       ul {
         padding-left: 10px;
@@ -99,8 +191,8 @@
         font-size: 23px;
         color: $crema;
         margin: 50px 0;
-        @media #{$desktopsmall}{
-            font-size: 22px;
+        @media #{$desktopsmall} {
+          font-size: 22px;
         }
         &:first-child {
           width: 80%;

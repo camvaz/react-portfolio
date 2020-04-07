@@ -46,7 +46,7 @@ const Navbar: (props: INavP) => JSX.Element = (props: INavP) => {
             pathname === "/#about" || props.active === "about" ? "active" : ""
           } ${props.isDark ? "dark" : ""}`}
         >
-          About
+          Services
         </p>
         <p
           className={`${

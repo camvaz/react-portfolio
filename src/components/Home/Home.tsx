@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import WebDev from "../../assets/undraw-webdev.png";
 import WebDevMobile from "../../assets/undraw-webdev-mobile.png";
-
+import Waving from "../../assets/waving.png";
 import "./Home.scss";
 import "animate.css";
 
@@ -12,13 +12,14 @@ import LinkNavigator from "../LinkNavigator/LinkNavigator";
 
 import { INavP } from "../Navbar/Navbar";
 import { homedir } from "os";
+import Portfolio from "../Portfolio/Portfolio";
 
 export interface IHomeP {
   setNavbar: (props: INavP) => void;
 }
 
 const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
-  const [linkNav, setLinkNav] = useState({ isDark: false, active: "home" });
+  const [linkNav, setLinkNav] = useState({ color: "light", active: "home" });
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -38,23 +39,25 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
     if (ref) {
       switch (element) {
         case "intro":
-          console.log(ref.top + " " + ref.bottom);
           if (ref.top <= 90 && ref.bottom >= 70) {
             props.setNavbar({ isDark: false, isSmall: true, active: "home" });
           }
           if (ref.top === 0)
             props.setNavbar({ isDark: false, isSmall: false, active: "home" });
+            if(ref.top <=0 && ref.bottom >= ref.height/2){
+              setLinkNav({color:'light',active:'home'});
+            }
           break;
         case "about":
-          const insideAboutSmall = ref.top <= ref.height / 4 && ref.bottom >= 0;
           const insideAboutFull = ref.top <= 280  ;
           const insideHalf =
-            ref.top <= ref.height / 2 && ref.bottom >= ref.height / 2;
+            ref.top <= 0 && ref.bottom >= ref.height / 2;
 
           setLinkNav({
-            isDark: insideHalf,
-            active: insideHalf ? "about" : "home",
+            color: "naranja",
+            active: "about"
           });
+
           props.setNavbar({
             isDark: insideAboutFull,
             isSmall: true,
@@ -84,33 +87,21 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
           content="Web development | Digital design | Mobile Apps"
         />
       </Helmet>
-      <LinkNavigator isDark={linkNav.isDark} active={linkNav.active} />
+      <LinkNavigator color={linkNav.color} active={linkNav.active} />
       <section id="intro">
         <div className="intro-text">
           <h1 className="title animated fadeInUp">
-            Aesthetic and powerful digital solutions.
+            Aesthetic and powerful<br/>digital solutions.
           </h1>
-          <p className="animated fadeInUp">
-            Hello there! I'm a programming enthusiast that enjoys creating
-            beautiful web applications. Some of the work I've done includes:
-          </p>
-          <ul className="animated fadeInUp delay-1s">
-            <li>UI/UX</li>
-            <li>Frontend development</li>
-            <li>Backend development</li>
-            <li>Dev Ops</li>
-          </ul>
-          <p className="last animated fadeInUp delay-2s">
-            Are you ready to take your web application to the next level?
-            <br />
-            Let's build something special and unique!
-          </p>
+          <h2 className="animated fadeInUp">
+            Delivering beautifully designed products<br/>through the world wide web.
+          </h2>
           <div className="btn-container">
             <button className="naranja animated fadeIn delay-1s">
               See portfolio
             </button>
             <button className="gris animated fadeIn delay-2s">
-              Contact me 👋
+              Contact me <img src={Waving} alt="waving"/>
             </button>
           </div>
         </div>
@@ -124,6 +115,7 @@ const Home: (props: IHomeP) => JSX.Element = (props: IHomeP) => {
         </div>
       </section>
       <About />
+      <Portfolio/>
     </main>
   );
 };

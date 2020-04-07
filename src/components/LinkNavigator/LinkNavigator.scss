@@ -53,15 +53,22 @@
     width: 15px;
     background: #f96d00 !important;
     border: solid $naranja 1px;
+    &.naranja{
+    background: $crema !important;
+    border: solid $crema 1px;
+    }
   }
 
   &.light {
     background: $gris;
   }
 
-  &.dark {
+  &.dark{
     background-color: $crema;
   }
+   &.naranja{
+     background-color: $gris;
+   }
 
   &:first-child {
     margin-top: 0;

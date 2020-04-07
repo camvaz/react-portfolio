@@ -27,7 +27,7 @@
     // visibility: hidden;
   }
   &.dark {
-    background-color: $gris;
+    background-color: $naranja;
     color: $crema;
   }
 }
@@ -55,6 +55,7 @@
     padding-left: 45px;
     font-size: 25px;
     color: inherit;
+  font-weight: 600;
     @media #{$desktop4k} {
       font-size: 30px;
     }
